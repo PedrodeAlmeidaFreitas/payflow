@@ -1,29 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/modules/login/loginPage.dart';
+import 'package:payflow/modules/splash/splashPage.dart';
+import 'package:payflow/shared/themes/appColors.dart';
 
 void main() {
-  runApp(MaterialApp(
-    theme: ThemeData(primaryColor: Colors.purple),
-    home: HomePage(),
-  ));
+  runApp(AppWidget());
 }
 
-class HomePage extends StatelessWidget {
+class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Olá'),
+    return MaterialApp(
+      title: 'Pay Flow',
+      theme: ThemeData(
+        primaryColor: AppColors.primary,
       ),
-      body: Container(
-        color: Colors.purple,
-        child: Center(
-          child: Container(
-            width: 250,
-            height: 250,
-            color: Colors.purple[300],
-          ),
-        ),
-      ),
+      home: LoginPage(),
     );
   }
 }
